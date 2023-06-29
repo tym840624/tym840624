@@ -1,0 +1,14 @@
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/CMakeFiles/edit_cache.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/CMakeFiles/rebuild_cache.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/calc/CMakeFiles/calc.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/calc/CMakeFiles/edit_cache.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/calc/CMakeFiles/rebuild_cache.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/sort/CMakeFiles/sort.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/sort/CMakeFiles/edit_cache.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/sort/CMakeFiles/rebuild_cache.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/test1/CMakeFiles/test1.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/test1/CMakeFiles/edit_cache.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/test1/CMakeFiles/rebuild_cache.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/test2/CMakeFiles/test2.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/test2/CMakeFiles/edit_cache.dir
+/Users/tianyuming/code/test/tym840624/cmake/04cmake/build/test2/CMakeFiles/rebuild_cache.dir

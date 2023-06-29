@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -dynamiclib -Wl,-headerpad_max_install_names -o /Users/tianyuming/code/test/tym840624/cmake/04cmake/lib/libsort.dylib -install_name @rpath/libsort.dylib CMakeFiles/sort.dir/insert.cpp.o CMakeFiles/sort.dir/select.cpp.o 

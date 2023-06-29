@@ -1,0 +1,41 @@
+cmake_minimum_required(VERSION 3.0.0)
+
+project(CALC)
+
+
+
+set(CMAKE_CXX_STANDARD 11)
+
+#包含头文件
+#PROJECT_SOURCE_DIR 宏对应的值就是我们在使用 cmake 命令时，后面紧跟的目录，一般是工程的根目录
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+# 搜索 src 目录下的源文件 方式1
+# CMAKE_CURRENT_SOURCE_DIR 宏表示当前访问的 CMakeLists.txt 文件所在的路径
+#file(GLOB SRC_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+
+#生成静态库文件
+#set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+#add_library(calc STATIC ${SRC_LIST})
+
+#链接静态库
+link_directories(${PROJECT_SOURCE_DIR}/lib)
+link_libraries(calc)
+add_executable(app main.cpp)
+
+message(STATUS "source path: ${PROJECT_SOURCE_DIR}")
+
+# 指定可执行程序要链接的动态库名字
+target_link_libraries(app pthread)
+
+#链接动态库与第三方库
+link_directories(${PROJECT_SOURCE_DIR}/lib)
+target_link_libraries(app pthread calc)
+
+#生成动态库文件
+# 设置动态库生成路径
+#set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+#add_library(calc SHARED ${SRC_LIST})
+
+
+

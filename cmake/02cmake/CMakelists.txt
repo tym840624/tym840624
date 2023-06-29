@@ -1,0 +1,30 @@
+cmake_minimum_required(VERSION 3.0.0)
+
+project(CALC)
+
+#add_executable(app main.c add.c sub.c multiply.c divide.c)
+#add_executable(app main.c;add.c;sub.c;multiply.c;divide.c)
+
+
+set(CMAKE_CXX_STANDARD 11)
+set(HOME /Users/tianyuming/code/test/tym840624)
+set(EXECUTABLE_OUTPUT_PATH ${HOME}/cmake/02cmake/build)
+
+
+#包含头文件
+#PROJECT_SOURCE_DIR 宏对应的值就是我们在使用 cmake 命令时，后面紧跟的目录，一般是工程的根目录
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+# 搜索 src 目录下的源文件 方式1
+# CMAKE_CURRENT_SOURCE_DIR 宏表示当前访问的 CMakeLists.txt 文件所在的路径
+aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC_LIST)
+
+#方式2：
+#set(SRC_LIST main.c;add.c;sub.c;multiply.c;divide.c)
+add_executable(app ${SRC_LIST})
+
+#方式3：
+#file(GLOB SRC_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c)
+#add_executable(app ${SRC_LIST})
+
+

@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.0.0)
+
+project(CALC)
+
+#add_executable(app main.c add.c sub.c multiply.c divide.c)
+#add_executable(app main.c;add.c;sub.c;multiply.c;divide.c)
+
+
+set(CMAKE_CXX_STANDARD 11)
+set(HOME /Users/tianyuming/code/test/tym840624)
+set(EXECUTABLE_OUTPUT_PATH ${HOME}/cmake/01cmake/build)
+
+set(SRC_LIST main.c;add.c;sub.c;multiply.c;divide.c)
+add_executable(app ${SRC_LIST})

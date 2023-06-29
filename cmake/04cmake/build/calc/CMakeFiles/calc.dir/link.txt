@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc /Users/tianyuming/code/test/tym840624/cmake/04cmake/lib/libcalc.a CMakeFiles/calc.dir/add.cpp.o CMakeFiles/calc.dir/divide.cpp.o CMakeFiles/calc.dir/multiply.cpp.o CMakeFiles/calc.dir/sub.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib /Users/tianyuming/code/test/tym840624/cmake/04cmake/lib/libcalc.a

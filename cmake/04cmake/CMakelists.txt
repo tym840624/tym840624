@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 3.0.0)
+
+project(test)
+
+#定义变量
+#指定生成静态库路径
+set(LIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+
+#测试程序生成路径
+set(EXEC_PATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+
+#头文件目录
+set(HEAD_PATH ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+#静态库名字
+set(CALC_LIB calc)
+set(SORT_LIB sort)
+
+#可执行文件的名字
+set(APP_NAME_1 test1)
+set(APP_NAME_2 test2)
+
+#添加子目录
+add_subdirectory(calc)
+add_subdirectory(sort)
+add_subdirectory(test1)
+add_subdirectory(test2)
+
+#定义的全局变量主要是给子节点使用，目的是为了提高子节点中的 CMakeLists.txt 文件的可读性和可维护性，避免冗余并降低出差的概率。
+#一共添加了四个子目录，每个子目录中都有一个 CMakeLists.txt 文件，这样它们的父子关系就被确定下来了。
+
+

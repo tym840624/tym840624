@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test1.dir/calc.cpp.o -o /Users/tianyuming/code/test/tym840624/cmake/04cmake/bin/test1  /Users/tianyuming/code/test/tym840624/cmake/04cmake/lib/libcalc.a 
