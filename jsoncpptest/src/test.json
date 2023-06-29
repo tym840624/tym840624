@@ -1,0 +1,15 @@
+[
+	12,
+	12.34,
+	true,
+	"tom",
+	[
+		"jack",
+		"ace",
+		"robin"
+	],
+	{
+		"girlfriend" : "lucy",
+		"sex" : "woman"
+	}
+]
