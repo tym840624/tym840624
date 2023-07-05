@@ -1,0 +1,16 @@
+ssh-keygen -t rsa -C "youremail@example.com"生成SSh密钥对。私钥保存好，公钥可以添加到Git服务器（如GitHub远程仓库）
+添加或关联一个远程仓库，git remote add origin git@server-name:path/repo-name.git
+第一次将本地仓库推送到远程master分支，git push -u origin master
+本地提交后，将本地最新仓库推送到远程，git push origin master
+克隆远程仓库，git clone git@server-name:path/repo-name.git
+
+回退到上一版本：
+git reset --hard HEAD^ 
+
+
+--创建密钥
+创建SSH Key时，生成的公钥和私钥默认存放在用户主目录下，在用户主目录下（windows为c/Users/用户名/，linux为/home/用户目录/）会有一个.ssh目录，并且里面包含有id_rsa和id_rsa.pub两个文件。
+打开终端（shell，windows下打开Git Bash），创建SSH Key：
+$ ssh-keygen -t rsa -C "youremail@example.com"
+设置及密码等，直接回车保持默认即可，暂时不用对key设置密码（除非保密级别特别高）
+此时，在用户主目录下找到.ssh目录，里面有id_rsa(私钥，不能泄露)和id_rsa.pub(公钥)，这两个就是SSH Key的秘密对
