@@ -7,10 +7,88 @@ ssh-keygen -t rsa -C "youremail@example.com"生成SSh密钥对。私钥保存好
 回退到上一版本：
 git reset --hard HEAD^ 
 
-
+https://segmentfault.com/a/1190000040580333
 --创建密钥
 创建SSH Key时，生成的公钥和私钥默认存放在用户主目录下，在用户主目录下（windows为c/Users/用户名/，linux为/home/用户目录/）会有一个.ssh目录，并且里面包含有id_rsa和id_rsa.pub两个文件。
 打开终端（shell，windows下打开Git Bash），创建SSH Key：
 $ ssh-keygen -t rsa -C "youremail@example.com"
 设置及密码等，直接回车保持默认即可，暂时不用对key设置密码（除非保密级别特别高）
 此时，在用户主目录下找到.ssh目录，里面有id_rsa(私钥，不能泄露)和id_rsa.pub(公钥)，这两个就是SSH Key的秘密对
+
+强制删除未合并的分支，git branch -D <branch-name>，将丢失分支的修改
+git remote和git remote -v 显示远程仓库信息
+git push origin branch-name将本地分支推送到远程。
+默认clone远程库后，只能看到master分支，其他分支需要设定跟踪，git checkout -b dev origin/devdev分支设置为跟踪来自 origin 的远程分支 dev。
+git branch --set-upstream-to=origin/<branch> branch创建本地分支与远程分支的跟踪，用于git push和git pull
+git pull <remote> <branch>拉取指定的远程分支
+
+
+https://segmentfault.com/a/1190000040590493
+
+本地创建新分支:
+添加一个新功能时，你肯定不希望因为一些实验性质的代码，把主分支搞乱了，所以，每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后，删除该feature分支。
+比如你接到了一个新任务：开发代号为Vulcan的新功能，该功能计划用于下一代星际飞船。
+git checkout -b feature-vulcan
+
+本地删除分支
+git branch -d feature-vulcan
+销毁失败。Git提示，feature-vulcan分支还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用命令git branch -D feature-vulcan。
+
+https://segmentfault.com/a/1190000040590493
+---多人协作提交，出现冲突处理：
+要想在dev分支上开发，需要创建本地dev分支并设置为跟踪远程origin的dev分支
+$ git checkout -b dev origin/dev
+分支 dev 设置为跟踪来自 origin 的远程分支 dev。
+切换到一个新分支 'dev'
+
+
+本地dev分支未关联远程dev时会报错
+$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
+展开对象中: 100% (3/3), 完成.
+来自 github.com:findmoon/newrepo
+   09a36ec..5a15ca7  dev        -> origin/dev
+当前分支没有跟踪信息。
+请指定您要合并哪一个分支。
+详见 git-pull(1)。
+    git pull <remote> <branch>
+如果您想要为此分支创建跟踪信息，您可以执行：
+    git branch --set-upstream-to=origin/<branch> dev
+
+操作：
+git pull失败，原因是: git pull需要指定本地分支与远程origin分支的跟踪，或者在git pull参数中指定远程分支
+git branch --set-upstream-to=origin/<branch> branch创建本地分支与远程分支的跟踪，用于git push和git pull
+git pull <remote> <branch>指定拉取的远程分支
+设置跟踪远程分支
+
+$ git branch --set-upstream-to=origin/dev dev
+分支 dev 设置为跟踪来自 origin 的远程分支 dev。
+
+删除冲突项后重新添加、提交和推送。
+$ git add .
+$ git commit -m"fixed remote conflict"
+$ git pull origin dev
+
+
+标签管理
+https://segmentfault.com/a/1190000040588405
+
+分支管理
+https://segmentfault.com/a/1190000040580349
+git checkout -b xx表示创建分支并切换。
+
+将dev2分支内容合并到master分支（当前分支为master）
+$ git merge dev2
+更新 036ced2..03d07d2
+Fast-forward
+ readme.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+ git merge命令用于合并指定分支到当前分支。
+注意，上面合并时提示Fast-forward，Git指示本次合并是“快进模式”，即把master指向dev2的当前提交，所以速度很快。
+
+删除dev2分支，合并完成后就可以放心的删除dev2分支了
+$ git branch -d dev2
+
